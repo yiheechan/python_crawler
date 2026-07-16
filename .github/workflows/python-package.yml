@@ -1,0 +1,13 @@
+name: Daily News Crawler
+
+on:
+  schedule:
+    - cron: '0 21 * * *'   # 매일 06:00(KST) 자동 실행
+  workflow_dispatch:        # Actions 탭 수동 실행 버튼 추가
+
+permissions:
+  contents: write            # 저장소에 커밋·푸시할 권한 부여
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
